@@ -53,4 +53,4 @@ const naim2: Admin = {
 };
 
 naim.email = "sdkjf@kjhsd.com";
-// naim._id = 245467; // it's readonly
+// naim._id = 245467; // it's readonly. So can't be edited
