@@ -18,6 +18,7 @@ class User2 {
         this.name = name;
         this.userId = userId;
         this._courseCount = 1;
+        this._likeCount = 1; // this value can't be accessed by outside of the classes but it can be accessed by the classes which will inherit it
         this.city = "Rajshahi";
         this.email = email;
         this.name = name;
@@ -41,7 +42,16 @@ class User2 {
     }
 }
 const naim2 = new User2("akdfh@kisuatka.com", "Naim", 3);
-export {};
 // console.log(naim2.userId); // can't be accessed here cuz it's private
 // naim2.deleteToken(); // can't be accessed cuz this method is private as well
+class SubUser extends User2 {
+    constructor() {
+        super(...arguments);
+        this.isFamily = true;
+    }
+    changeLikeCount() {
+        this._likeCount = 3; // inheritance has taken the 'protected' value
+    }
+}
+export {};
 //# sourceMappingURL=index.js.map

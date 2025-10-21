@@ -21,6 +21,7 @@ const naim = new User("ajsdfhgbawdhl@kisuakta.com", "Naim");
 // more professional
 class User2 {
   private _courseCount = 1;
+  protected _likeCount = 1; // this value can't be accessed by outside of the classes but it can be accessed by the classes which will inherit it
   private readonly city: string = "Rajshahi";
   constructor(
     public email: string,
@@ -59,3 +60,10 @@ const naim2 = new User2("akdfh@kisuatka.com", "Naim", 3);
 // console.log(naim2.userId); // can't be accessed here cuz it's private
 
 // naim2.deleteToken(); // can't be accessed cuz this method is private as well
+
+class SubUser extends User2 {
+  isFamily: boolean = true;
+  changeLikeCount() {
+    this._likeCount = 3; // inheritance has taken the 'protected' value
+  }
+}
